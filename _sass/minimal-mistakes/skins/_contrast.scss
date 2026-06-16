@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Contrast skin
+   ========================================================================== */
+
+/* Colors */
+$text-color: #252525 !default;
+$muted-text-color: $text-color !default;
+$primary-color: #42114b !default;
+$border-color: mix(#fff, $text-color, 75%) !default;
+$footer-background-color: #252525 !default;
+$link-color: #370E3F !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $text-color !default;
+$navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
+
+/* solarized light syntax highlighting (base16) */
+// $base00: #fafafa !default;
+// $base01: #073642 !default;
+// $base02: #586e75 !default;
+// $base03: #657b83 !default;
+// $base04: #839496 !default;
+// $base05: #586e75 !default;
+// $base06: #eee8d5 !default;
+// $base07: #fdf6e3 !default;
+// $base08: #dc322f !default;
+// $base09: #cb4b16 !default;
+// $base0a: #b58900 !default;
+// $base0b: #859900 !default;
+// $base0c: #2aa198 !default;
+// $base0d: #268bd2 !default;
+// $base0e: #6c71c4 !default;
+// $base0f: #d33682 !default;
+
+/*monokai light syntax highlighting (base16) */
+$base00: #f9f8f5 !default;
+$base01: #f5f4f1 !default;
+$base02: #f8f8f2 !default;
+$base03: #a59f85 !default;
+$base04: #252822 !default; //xml comments, prolog
+$base05: #49483e !default; // copy code icon
+$base06: #75715e !default;
+$base07: #303738 !default;
+$base08: #1d8ca8 !default; // XML attributes
+$base09: #269c68 !default; // numbers
+$base0a: #e06031 !default;
+$base0b: #cc7a0a !default; // strings
+$base0c: #e04775 !default; // XML tags
+$base0d: #2d8bcd !default;
+$base0e: #7158be !default; // true, false, null
+$base0f: #cc6633 !default;
+
+
+
+
+/*monokai syntax highlighting (base16) */
+// $base00: #272822 !default;
+// $base01: #f8f8f2 !default;
+// $base02: #272822 !default;
+// $base03: #f92672 !default;
+// $base04: #a6e22e !default;
+// $base05: #f4bf75 !default;
+// $base06: #66d9ef !default;
+// $base07: #ae81ff !default;
+// $base08: #a1efe4 !default;
+// $base09: #f8f8f2 !default;
+// $base0a: #75715e !default;
+// $base0b: #f92672 !default;
+// $base0c: #a1efe4 !default;
+// $base0d: #66d9ef !default;
+// $base0e: #ae81ff !default;
+// $base0f: #cc6633 !default;
+
+
+.page__content {
+  .notice,
+  .notice--primary,
+  .notice--info,
+  .notice--warning,
+  .notice--success,
+  .notice--danger {
+    color: $text-color;
+  }
+}
+
+.page__footer {
+  color: #fff !important; // override
+}
+
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa  {
+  color: inherit;
+}
