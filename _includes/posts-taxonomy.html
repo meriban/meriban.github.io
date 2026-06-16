@@ -1,0 +1,61 @@
+<!-- Modyfied to work with workshops collection-->
+
+{% assign locale = include.locale | default: site.locale %}
+{% assign items_max = 0 %}
+
+{%- assign alldocs = site.documents -%}
+
+{%- assign grouptags = alldocs | map: "categories" | join: ',' | split: ',' -%}
+{%- assign unique_tags = grouptags | uniq -%}
+{%- assign tags_counts = '' | split: ',' -%}
+{%- assign n_tags = unique_tags | size | minus: 1 -%}
+{%- for i in (0..n_tags) -%}
+  {%- assign tag_i = unique_tags[i] -%}
+  {%- assign count_this_tag = grouptags | where_exp:"item", "item == unique_tags[i]" | size -%}
+  {%- assign tags_counts = tags_counts | push: count_this_tag -%}
+{%- endfor -%}
+
+
+{% assign items_max = 0 %}
+{% for item in tags_counts %}
+  {% if item > items_max %}
+    {% assign items_max = item %}
+  {% endif %}
+{% endfor %}
+
+<ul class="taxonomy__index">
+  {% for i in (1..items_max) reversed %}
+    {% for item in unique_tags %}
+      {% if tags_counts[forloop.index0] == i %}
+        <li>
+          <a href="#{{ item | slugify }}">
+            <strong>{{ item }}</strong> <span class="taxonomy__count">{{ i }}</span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>
+
+{% assign entries_layout = page.entries_layout | default: 'list' %}
+{% for i in (1..items_max) reversed %}
+  {% for taxonomy in unique_tags %}
+    {% if tags_counts[forloop.index0] == i %}
+      <section id="{{ taxonomy | slugify }}" class="taxonomy__section">
+        <h2 class="archive__subtitle">{{ taxonomy }}</h2>
+        <div class="entries-{{ entries_layout }}">
+          {% for post in alldocs %}
+            {%- assign categs = post.categories | join: "," | split: "," -%}
+              {%- if categs contains taxonomy -%}
+                {% include archive-single.html locale=locale type=entries_layout %}
+              {%- endif -%}
+          {% endfor %}
+          <!-- {% for post in taxonomy.last %}
+            {% include archive-single.html locale=locale type=entries_layout %}
+          {% endfor %} -->
+        </div>
+        <a href="#page-title" class="back-to-top">{{ site.data.ui-text[locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+      </section>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
