@@ -1,0 +1,8 @@
+{% assign locale = include.locale | default: site.locale %}
+{% assign document = post | default: page %}
+
+{%- if document.description -%}
+  <p class="page__description p-note">
+    {{document.description}}
+  </p>
+{%- endif -%}

@@ -1,0 +1,14 @@
+# main links
+main:
+  - title: "foundations"
+    url: /foundations/
+  - title: "notes"
+    url: /notes/
+  - title: "workshops"
+    url: /workshops/
+  - title: "contact"
+    url: /contact/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
