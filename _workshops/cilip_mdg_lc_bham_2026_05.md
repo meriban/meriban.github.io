@@ -25,11 +25,11 @@ categories:
   - OpenRefine
 read_time: true
 sidebar:
-  - title: "DTD"
-    image: "/assets/images/dtd.png"
+  - title: "CILIP MDG Library Carpentry workshop, Birmingham"
+    image: ""
     image_alt: 
 header:
-  teaser: "/assets/images/workshop_placeholder.png"
+  teaser: ""
 ---
 
 The workshop focuses on working with data **outside a MARC environment**, with particular attention to formats commonly encountered in metadata work, such as delimited files, XML, and JSON. While the emphasis is on non-MARC data, the concepts, strategies, and tools covered are widely transferable and highly relevant across a range of library systems and workflows.
